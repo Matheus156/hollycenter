@@ -296,8 +296,9 @@
         }
 
         .planta-specs li {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             align-items: flex-start;
             margin-bottom: 0.5rem;
             padding-bottom: 0.5rem;
@@ -307,14 +308,12 @@
         .planta-specs li span:first-child {
             font-weight: 600;
             color: var(--primary-color);
-            min-width: 80px;
-            flex-shrink: 0;
+            text-align: left;
         }
 
         .planta-specs li span:last-child {
             text-align: right;
-            flex: 1;
-            margin-left: 1rem;
+            word-wrap: break-word;
         }
 
         .preco {
