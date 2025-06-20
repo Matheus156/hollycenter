@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holly Center - O Primeiro Street Mall de Eunápolis</title>
-    <meta name="description" content="Holly Center - O primeiro e único street mall de Eunápolis-BA. Invista no futuro do comércio com lojas térreas em ambiente a céu aberto.">
+    <meta name="description" content="Holly Center - O primeiro e único Streel Mall de Eunápolis - Bahia, invista no futuro do comércio.">
     
     <!-- Fontes Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -298,9 +298,23 @@
         .planta-specs li {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 0.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #eee;
+        }
+
+        .planta-specs li span:first-child {
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+
+        .planta-specs li span:last-child {
+            text-align: right;
+            flex: 1;
+            margin-left: 1rem;
         }
 
         .preco {
@@ -321,9 +335,12 @@
         }
 
         .contato-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contato-info {
+            max-width: 500px;
         }
 
         .contato-info h3 {
@@ -477,14 +494,6 @@
                 </div>
                 <h3>Pioneirismo</h3>
                 <p>O primeiro e único Street Mall de Eunápolis, conceito inovador que está revolucionando o comércio no Brasil</p>
-            </div>
-            
-            <div class="diferencial-card">
-                <div class="diferencial-icon">
-                    <i class="fas fa-store"></i>
-                </div>
-                <h3>Lojas Térreas</h3>
-                <p>Todas as lojas com acesso direto da rua, fachada independente e máxima visibilidade para seu negócio</p>
             </div>
             
             <div class="diferencial-card">
@@ -659,26 +668,6 @@
                     <span>Seg a Sex: 8h às 18h<br>Sáb: 8h às 12h</span>
                 </div>
             </div>
-            
-            <form class="contato-form">
-                <div class="form-group">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefone">Telefone/WhatsApp</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu interesse no Holly Center..."></textarea>
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%;">Enviar Mensagem</button>
-            </form>
         </div>
     </section>
 
@@ -701,12 +690,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Form submit
-        document.querySelector('.contato-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mensagem enviada! Entraremos em contato em breve.');
         });
     </script>
 </body>
