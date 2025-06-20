@@ -189,8 +189,10 @@
 
         .diferenciais-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .diferencial-card {
@@ -424,6 +426,13 @@
         }
 
         /* Responsivo */
+        @media (max-width: 1024px) {
+            .diferenciais-grid {
+                max-width: 700px;
+                gap: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -442,6 +451,12 @@
                 align-items: center;
             }
 
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 400px;
+            }
+
             .localizacao-content,
             .contato-content {
                 grid-template-columns: 1fr;
@@ -449,6 +464,21 @@
 
             .section {
                 padding: 3rem 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .diferenciais-grid {
+                gap: 1rem;
+                max-width: 350px;
+            }
+            
+            .diferencial-card {
+                padding: 1.5rem;
+            }
+            
+            .section {
+                padding: 2rem 3%;
             }
         }
     </style>
