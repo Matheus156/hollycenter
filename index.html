@@ -31,7 +31,7 @@
         "name": "Holly Center",
         "description": "O primeiro street mall de Eunápolis-BA",
         "url": "https://hollycenter.com.br",
-        "telephone": "+55-73-99936-1700",
+        "telephone": "+55-73-99999-9999",
         "email": "contato@hollycenter.com.br",
         "address": {
             "@type": "PostalAddress",
@@ -78,7 +78,7 @@
         "name": "Holly Center",
         "description": "Street mall com lojas para investimento em Eunápolis-BA",
         "url": "https://hollycenter.com.br",
-        "telephone": "+55-73-99936-1700",
+        "telephone": "+55-73-99999-9999",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Av. Antônio Carlos Magalhães, 130",
@@ -308,7 +308,99 @@
             color: var(--primary-color);
         }
 
-        /* Localização */
+        /* Galeria */
+        .galeria-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .category-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 1rem auto;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .galeria-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .galeria-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover .galeria-image {
+            transform: scale(1.05);
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(30,58,138,0.9));
+            color: var(--white);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover .galeria-overlay {
+            transform: translateY(0);
+        }
+
+        .galeria-overlay h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .galeria-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .galeria-disclaimer {
+            background: rgba(30,58,138,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .galeria-disclaimer i {
+            margin-right: 0.5rem;
+        }
         .localizacao-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -544,6 +636,15 @@
                 max-width: 400px;
             }
 
+            .galeria-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .galeria-item {
+                min-width: auto;
+            }
+
             .localizacao-content,
             .contato-content {
                 grid-template-columns: 1fr;
@@ -579,6 +680,7 @@
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#diferenciais">Diferenciais</a></li>
                 <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#galeria">Projeto</a></li>
                 <li><a href="#plantas">Plantas</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -674,6 +776,132 @@
                     <p>Mapa da localização<br>em breve</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Renders -->
+    <section id="galeria" class="section diferenciais">
+        <h2 class="section-title">Projeto Arquitetônico</h2>
+        <p class="section-subtitle">Conheça como será o Holly Center - Renders 3D do projeto desenvolvido por nossa equipe de arquitetura</p>
+        
+        <!-- Fachadas Externas -->
+        <div class="galeria-category">
+            <h3 class="category-title">Fachadas e Área Externa</h3>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="./fachada1.jpg" alt="Fachada Principal Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Fachada Principal</h3>
+                        <p>Design moderno com elementos em madeira e estrutura em vidro</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./fachada2.jpg" alt="Vista Lateral Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Vista Lateral</h3>
+                        <p>Amplo estacionamento e acesso facilitado para clientes</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./fachada3.jpg" alt="Área de Estacionamento Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Área de Estacionamento</h3>
+                        <p>Estacionamento organizado com paisagismo e sinalização</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./fachada4.jpg" alt="Entrada Principal Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Entrada Principal</h3>
+                        <p>Acesso principal com área de playground visível</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./fachada5.jpg" alt="Vista Geral Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Vista Geral</h3>
+                        <p>Visão completa do empreendimento e entorno urbano</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./posto.jpg" alt="Posto de Combustível Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Posto de Combustível</h3>
+                        <p>Conveniência com posto Shell integrado ao complexo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ambientes Internos -->
+        <div class="galeria-category">
+            <h3 class="category-title">Ambientes Internos</h3>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="./praca-alimentacao1.jpg" alt="Praça de Alimentação Central Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Praça de Alimentação Central</h3>
+                        <p>Amplo salão com vista panorâmica para todas as lojas do empreendimento</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./praca-alimentacao2.jpg" alt="Vista Panorâmica Praça de Alimentação Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Vista Panorâmica</h3>
+                        <p>Perspectiva completa do ambiente com mezanino e lojas do piso superior</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./playground.jpg" alt="Playground Coberto Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Playground Premium</h3>
+                        <p>Área infantil completa em ambiente climatizado e seguro</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./interior1.jpg" alt="Área Kids com Playground Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Espaço de Convivência Kids</h3>
+                        <p>Área de descanso próxima ao playground para famílias</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./interior2.jpg" alt="Área de Convivência Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Área de Convivência</h3>
+                        <p>Espaço central moderno com mobiliário confortável</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./interior3.jpg" alt="Corredor Central Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Corredor Principal</h3>
+                        <p>Circulação ampla com iluminação LED e vista panorâmica</p>
+                    </div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="./interior4.jpg" alt="Área de Estar Holly Center" class="galeria-image">
+                    <div class="galeria-overlay">
+                        <h3>Área de Estar</h3>
+                        <p>Lounge moderno com poltronas e vista para o movimento das lojas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="galeria-disclaimer">
+            <p><i class="fas fa-info-circle"></i> <strong>Imagens ilustrativas:</strong> Renders 3D desenvolvidos pela equipe de arquitetura. O projeto pode sofrer alterações durante a execução.</p>
         </div>
     </section>
 
@@ -822,7 +1050,7 @@
                 <h3>Fale com Nossa Equipe</h3>
                 <div class="contato-item">
                     <i class="fas fa-phone"></i>
-                    <span>(73) 9 9936-1700</span>
+                    <span>(73) 9 9999-9999</span>
                 </div>
                 <div class="contato-item">
                     <i class="fas fa-envelope"></i>
@@ -846,7 +1074,7 @@
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/5573999361700?text=Olá! Tenho interesse no Holly Center" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5573999999999?text=Olá! Tenho interesse no Holly Center" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
